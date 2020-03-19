@@ -15,10 +15,10 @@ class Client
         $this->appKey = $appKey;
     }
 
-    public function _get($class)
+    public function __call($method, $params)
     {
         try {
-            return app()->make("\Qcloud\Sms\{$class}", [$this->appId, $this->appKey]);
+            return app()->make("\Qcloud\Sms\{$method}", [$this->appId, $this->appKey]);
         } catch (BindingResolutionException $e) {
             throw new \RuntimeException($e->getMessage());
         } catch (\Exception $e) {
