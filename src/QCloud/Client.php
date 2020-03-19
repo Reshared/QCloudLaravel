@@ -18,7 +18,12 @@ class Client
     public function __call($method, $params)
     {
         try {
-            return app()->make("\Qcloud\Sms\{$method}", [$this->appId, $this->appKey]);
+            return app()->make("\\Qcloud\\Sms\\{$method}",
+                [
+                    'appid' => $this->appId,
+                    'appkey' => $this->appKey,
+                ]
+            );
         } catch (BindingResolutionException $e) {
             throw new \RuntimeException($e->getMessage());
         } catch (\Exception $e) {
