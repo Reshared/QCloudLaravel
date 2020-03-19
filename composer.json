@@ -1,7 +1,7 @@
 {
     "name": "ruishuang/qcloud-laravel",
     "description": "A laravel package for qcloud sms",
-    "type": "composer-plugin",
+    "type": "library",
     "require": {
         "php": "^5.6|^7.1",
         "illuminate/support": "^5.2|^6.0|^7.0",
