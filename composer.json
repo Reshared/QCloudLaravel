@@ -1,0 +1,41 @@
+{
+    "name": "ruishuang/qcloud-laravel",
+    "description": "A laravel package for qcloud sms",
+    "type": "composer-plugin",
+    "require": {
+        "php": "^5.6|^7.1",
+        "illuminate/support": "^5.2|^6.0|^7.0",
+        "qcloudsms/qcloudsms_php": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3|~6.0|~8.0",
+        "orchestra/testbench": "~3.0|^4.0|^5.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ruishuang",
+            "email": "ruishuang@macbook.pro"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ruishuang\\QCloudLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ruishuang\\QCloudLaravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ruishuang\\QCloudLaravel\\QCloudServiceProvider"
+            ],
+            "aliases": {
+                "QCloudSMS": "Ruishuang\\QCloudLaravel\\Facade\\QCloudSMS"
+            }
+        }
+    }
+}
