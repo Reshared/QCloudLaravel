@@ -4,6 +4,10 @@ namespace Ruishuang\QCloudLaravel\QCloud;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 
+/**
+ * Class Client
+ * @package Ruishuang\QCloudLaravel\QCloud
+ */
 class Client
 {
     protected $appId;
